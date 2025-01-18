@@ -1,14 +1,36 @@
 import React from "react";
-import logo from "./logo.svg";
-import { Counter } from "./features/counter/Counter";
-import "./App.css";
+import HomePage from "./pages/HomePage";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AddProduct from "./pages/AddProduct";
+import EditProduct from "./pages/EditProduct";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
+  },
+  {
+    path: "/AddProduct",
+    element: <AddProduct />,
+  },
+  {
+    path: "/EditProduct",
+    element: <EditProduct />,
+  },
+]);
 
 function App() {
-  return (
-    <div className="container">
-      <h1></h1>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
