@@ -13,12 +13,11 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
+  { name: "Products", href: "/", current: true },
+  { name: "Orders", href: "/orders", current: false },
 ];
 
 function classNames(...classes) {
@@ -26,6 +25,10 @@ function classNames(...classes) {
 }
 
 export default function NavBar() {
+  const navigate = useNavigate();
+  const handleIconClick = () => {
+    navigate("/");
+  };
   return (
     <Disclosure as="nav" className="bg-gray-800">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -46,7 +49,10 @@ export default function NavBar() {
             </DisclosureButton>
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex shrink-0 items-center">
+            <div
+              className="flex shrink-0 items-center cursor-pointer"
+              onClick={handleIconClick}
+            >
               <img
                 alt="Your Company"
                 src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"

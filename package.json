@@ -7,6 +7,7 @@
     "@heroicons/react": "^2.2.0",
     "@hookform/resolvers": "^3.10.0",
     "@reduxjs/toolkit": "^2.5.0",
+    "@tanstack/react-table": "^8.20.6",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cra-template-redux": "2.0.0",
